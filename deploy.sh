@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if [ ! -f ".env" ]; then
-  . .env
-  cp .env ~/.env
+if [ ! -f ".envrc" ]; then
+  . .envrc
+  cp .envrc ~/.envrc
 fi
 
 GITHUB_TOKEN=$GITHUB_TOKEN envsubst < .gitconfig > ~/.gitconfig

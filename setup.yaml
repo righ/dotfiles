@@ -5,7 +5,7 @@
   - name: clone anyenv
     git:
       repo: https://github.com/anyenv/anyenv
-      dest: ~/.anyenv
+      dest: "{{ ansible_env.HOME }}/.anyenv"
     tags: [env, anyenv]
 
   - name: init anyenv
@@ -53,17 +53,17 @@
   - name: clone tfenv
     git:
       repo: https://github.com/tfutils/tfenv.git
-      dest: ~/.tfenv
+      dest: "{{ ansible_env.HOME }}/.tfenv"
     tags: [env, tfenv]
 
   - name: clone fzf
     git:
-      repo: https://github.com/junegunn/fzf.git ~/.fzf
+      repo: https://github.com/junegunn/fzf.git
       depth: 1
-      dest: ~/.fzf
+      dest: "{{ ansible_env.HOME }}/.fzf"
     tags: [fzf]
 
   - name: install fzf
-    shell: ~/.fzf/install
+    shell: "{{ ansible_env.HOME }}/.fzf/install"
     tags: [fzf]
 
