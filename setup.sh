@@ -61,5 +61,15 @@ tfenv global $TERRAFORM_VERSION
 
 # fzf
 git clone https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+
+expect -c "
+  spawn ~/.fzf/install
+  expect {
+    default { exit 0 }
+    \"Do you want to enable fuzzy auto-completion? ([y]/n)\" { send \"y\" }
+    \"Do you want to enable key bindings? ([y]/n)\" { send \"y\" }
+    \"Do you want to update your shell configuration files? ([y]/n)\" { send \"n\" }
+  }
+  interact
+"
 
