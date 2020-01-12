@@ -21,7 +21,7 @@ expect -c "
   spawn ~/.anyenv/bin/anyenv install --init
   expect {
     default { exit 0 }
-    \"y/N\" { send \"y\" }
+    \"y/N\" { send \"y\n\" }
   }
   interact
 "
@@ -33,7 +33,7 @@ expect -c "
   spawn anyenv install goenv
   expect {
     default { exit 0 }
-    \"y/N\" { send \"N\" }
+    \"y/N\" { send \"N\n\" }
   }
   interact
 "
@@ -45,7 +45,7 @@ expect -c "
   spawn anyenv install pyenv
   expect {
     default { exit 0 }
-    \"y/N\" { send \"N\" }
+    \"y/N\" { send \"N\n\" }
   }
   interact
 "
@@ -57,7 +57,7 @@ expect -c "
   spawn anyenv install rbenv
   expect {
     default { exit 0 }
-    \"y/N\" { send \"N\" }
+    \"y/N\" { send \"N\n\" }
   }
   interact
 "
@@ -69,7 +69,7 @@ expect -c "
   spawn anyenv install nodenv
   expect {
     default { exit 0 }
-    \"y/N\" { send \"N\" }
+    \"y/N\" { send \"N\n\" }
   }
   interact
 "
@@ -81,7 +81,7 @@ expect -c "
   spawn anyenv install Renv
   expect {
     default { exit 0 }
-    \"y/N\" { send \"N\" }
+    \"y/N\" { send \"N\n\" }
   }
   interact
 "
@@ -93,7 +93,7 @@ expect -c "
   spawn anyenv install hsenv
   expect {
     default { exit 0 }
-    \"y/N\" { send \"N\" }
+    \"y/N\" { send \"N\n\" }
   }
   interact
 "
@@ -112,9 +112,9 @@ expect -c "
   spawn ~/.fzf/install
   expect {
     default { exit 0 }
-    \"Do you want to enable fuzzy auto-completion? ([y]/n)\" { send \"y\" }
-    \"Do you want to enable key bindings? ([y]/n)\" { send \"y\" }
-    \"Do you want to update your shell configuration files? ([y]/n)\" { send \"n\" }
+    \"Do you want to enable fuzzy auto-completion? ([y]/n)\" { send \"y\n\" }
+    \"Do you want to enable key bindings? ([y]/n)\" { send \"y\n\" }
+    \"Do you want to update your shell configuration files? ([y]/n)\" { send \"n\n\" }
   }
   interact
 "
