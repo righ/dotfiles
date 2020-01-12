@@ -1,7 +1,7 @@
 - hosts: localhost
   become: yes
   connection: local
-  gather_facts: false
+  gather_facts: yes
   tasks:
   - name: Add Docker’s official GPG key
     shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
