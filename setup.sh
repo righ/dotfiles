@@ -12,7 +12,6 @@ TERRAFORM_VERSION=0.12.19
 sudo timedatectl set-timezone Asia/Tokyo
 
 source ./install.sh
-source ./deploy.sh
 
 sudo usermod -aG docker $USER
 git clone https://github.com/anyenv/anyenv ~/.anyenv
@@ -24,35 +23,78 @@ expect -c "
   }
   interact
 "
-$(~/.anyenv/bin/anyenv init -)
+
+source ./deploy.sh
 
 # goenv
-~/.anyenv/bin/anyenv install goenv
+expect -c "
+  spawn ~/.anyenv/bin/anyenv install goenv
+  expect {
+    default { exit 0 }
+    \"y/N\" { send \"N\n\" }
+  }
+  interact
+"
 goenv install $GO_VERSION
 goenv global $GO_VERSION
 
 # pyenv
-~/.anyenv/bin/anyenv install pyenv
+expect -c "
+  spawn ~/.anyenv/bin/anyenv install pyenv
+  expect {
+    default { exit 0 }
+    \"y/N\" { send \"N\n\" }
+  }
+  interact
+"
 pyenv install $PYTHON_VERSION
 pyenv global $PYTHON_VERSION
 
 # rbenv
-~/.anyenv/bin/anyenv install rbenv
+expect -c "
+  spawn ~/.anyenv/bin/anyenv install rbenv
+  expect {
+    default { exit 0 }
+    \"y/N\" { send \"N\n\" }
+  }
+  interact
+"
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
 
 # nodenv
-~/.anyenv/bin/anyenv install nodenv
+expect -c "
+  spawn ~/.anyenv/bin/anyenv install nodenv
+  expect {
+    default { exit 0 }
+    \"y/N\" { send \"N\n\" }
+  }
+  interact
+"
 nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
 
 # Renv
-~/.anyenv/bin/anyenv install Rbenv
+expect -c "
+  spawn ~/.anyenv/bin/anyenv install Rbenv
+  expect {
+    default { exit 0 }
+    \"y/N\" { send \"N\n\" }
+  }
+  interact
+"
 Renv install $R_VERSION
 Renv global $R_VERSION
 
 # hsenv
-~/.anyenv/bin/anyenv install hsenv
+expect -c "
+  spawn ~/.anyenv/bin/anyenv install hsenv
+  expect {
+    default { exit 0 }
+    \"y/N\" { send \"N\n\" }
+  }
+  interact
+"
 hsenv install $HASKELL_VERSION
 hsenv global $HASKELL_VERSION
 
@@ -76,3 +118,4 @@ expect -c "
 "
 
 ./language-server.sh
+
