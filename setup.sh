@@ -11,8 +11,8 @@ TERRAFORM_VERSION=0.12.19
 
 sudo timedatectl set-timezone Asia/Tokyo
 
-./install.sh
-./deploy.sh
+source ./install.sh
+source ./deploy.sh
 
 sudo usermod -aG docker $USER
 git clone https://github.com/anyenv/anyenv ~/.anyenv
