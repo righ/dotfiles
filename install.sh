@@ -29,6 +29,7 @@ sudo apt-get install -y \
   unzip \
   git \
   tmux \
+  expect \
   apt-transport-https \
   ca-certificates \
   gnupg-agent \
