@@ -33,11 +33,17 @@ expect -c "
   spawn anyenv install goenv
   expect {
     default { exit 0 }
+    \"y/N\" { send \"y\n\" }
+  }
+  interact
+
+  swapn goenv install $GO_VERSION
+  expect {
+    default { exit 0 }
     \"y/N\" { send \"N\n\" }
   }
   interact
 "
-goenv install $GO_VERSION
 goenv global $GO_VERSION
 
 # pyenv
@@ -45,11 +51,17 @@ expect -c "
   spawn anyenv install pyenv
   expect {
     default { exit 0 }
+    \"y/N\" { send \"y\n\" }
+  }
+  interact
+
+  spawn pyenv install $PYTHON_VERSION
+  expect {
+    default { exit 0 }
     \"y/N\" { send \"N\n\" }
   }
   interact
 "
-pyenv install $PYTHON_VERSION
 pyenv global $PYTHON_VERSION
 
 # rbenv
@@ -57,11 +69,17 @@ expect -c "
   spawn anyenv install rbenv
   expect {
     default { exit 0 }
+    \"y/N\" { send \"y\n\" }
+  }
+  interact
+
+  spawn rbenv install $RUBY_VERSION
+  expect {
+    default { exit 0 }
     \"y/N\" { send \"N\n\" }
   }
   interact
 "
-rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
 
 # nodenv
@@ -69,16 +87,31 @@ expect -c "
   spawn anyenv install nodenv
   expect {
     default { exit 0 }
+    \"y/N\" { send \"y\n\" }
+  }
+  interact
+
+  spawn nodenv install $NODE_VERSION
+  expect {
+    default { exit 0 }
     \"y/N\" { send \"N\n\" }
   }
   interact
 "
-nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
 
 # tfenv
-git clone https://github.com/tfutils/tfenv.git ~/.tfenv
-~/.tfenv/bin/tfenv install $TERRAFORM_VERSION
+if [ ! -f "~/.tfenv" ]; then
+  git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+fi
+expect -c "
+  spawn ~/.tfenv/bin/tfenv install $TERRAFORM_VERSION
+  expect {
+    default { exit 0 }
+    \"y/N\" { send \"y\n\" }
+  }
+  interact
+"
 ~/.tfenv/bin/tfenv global $TERRAFORM_VERSION
 
 # fzf
