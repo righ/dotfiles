@@ -10,11 +10,11 @@ TERRAFORM_VERSION=0.12.19
 
 
 sudo timedatectl set-timezone Asia/Tokyo
-sudo usermod -aG docker $USER
 
 ./install.sh
 ./deploy.sh
 
+sudo usermod -aG docker $USER
 git clone https://github.com/anyenv/anyenv ~/.anyenv
 expect -c "
   spawn ~/.anyenv/bin/anyenv install --init
@@ -57,9 +57,9 @@ hsenv install $HASKELL_VERSION
 hsenv global $HASKELL_VERSION
 
 # tfenv
-~/.anyenv/bin/anyenv install tfenv
-tfenv install $TERRAFORM_VERSION
-tfenv global $TERRAFORM_VERSION
+git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+~/.tfenv/bin/tfenv install $TERRAFORM_VERSION
+~/.tfenv/bin/tfenv global $TERRAFORM_VERSION
 
 # fzf
 git clone https://github.com/junegunn/fzf.git ~/.fzf
