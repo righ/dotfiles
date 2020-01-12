@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ ! -f ".envrc" ]; then
+if [ -f ".envrc" ]; then
   . .envrc
   cp .envrc ~/.envrc
 fi
