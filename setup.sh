@@ -10,6 +10,8 @@ TERRAFORM_VERSION=0.12.19
 
 
 sudo timedatectl set-timezone Asia/Tokyo
+sudo usermod -aG docker $USER
+
 ./install.sh
 ./deploy.sh
 
