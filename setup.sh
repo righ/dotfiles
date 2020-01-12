@@ -128,5 +128,7 @@ expect -c "
   interact
 "
 
+$(anyenv init -)
+
 source ${DOTFILES}/language-server.sh
 
