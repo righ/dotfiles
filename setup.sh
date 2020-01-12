@@ -5,7 +5,7 @@ PYTHON_VERSION=3.8.1
 RUBY_VERSION=2.7.0
 NODE_VERSION=13.6.0
 R_VERSION=3.6.2
-HASKELL_VERSION=8.6.3
+HASKELL_VERSION=8.8.1
 TERRAFORM_VERSION=0.12.19
 
 
@@ -76,7 +76,7 @@ nodenv global $NODE_VERSION
 
 # Renv
 expect -c "
-  spawn ~/.anyenv/bin/anyenv install Rbenv
+  spawn ~/.anyenv/bin/anyenv install Renv
   expect {
     default { exit 0 }
     \"y/N\" { send \"N\n\" }
@@ -117,5 +117,5 @@ expect -c "
   interact
 "
 
-./language-server.sh
+source language-server.sh
 

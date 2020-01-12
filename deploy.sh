@@ -29,6 +29,6 @@ rm ~/.vim
 ln -s "${DOTFILES}/.vim" ~/.vim
 
 cd ~/
-. .bash_profile
+source .bash_profile
 direnv allow
 
