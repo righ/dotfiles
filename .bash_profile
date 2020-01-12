@@ -4,3 +4,4 @@ export GOENV_DISABLE_GOPATH=1
 export EDITOR=vim
 eval "$(anyenv init -)"
 
+source .bashrc
