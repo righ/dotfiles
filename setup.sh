@@ -75,3 +75,4 @@ expect -c "
   interact
 "
 
+./language-server.sh
