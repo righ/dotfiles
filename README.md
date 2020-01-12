@@ -1,4 +1,10 @@
-# Get environments and write it to `.env` 
+# Clone
+
+```sh
+$ git clone https://github.com/righ/dotfiles ~/dotfiles/
+```
+
+# Get environments and write it to `~/dotfiles/.envrc` 
 
 - `GITHUB_TOKEN`: https://github.com/settings/tokens
 - `NGROK_TOKEN`: https://dashboard.ngrok.com/auth
@@ -8,12 +14,12 @@
 ## Once
 ```sh
 # run as sudoer
-./setup.sh
+$ ./setup.sh
 ```
 
 ## Each time
 
 ```sh
-./deploy.sh
+$ ./deploy.sh
 ```
 
