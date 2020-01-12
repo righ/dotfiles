@@ -8,8 +8,8 @@
       dest: "{{ ansible_env.HOME }}/.anyenv"
     tags: [env, anyenv]
 
-  - name: init anyenv
-    shell: anyenv init
+  - name: install anyenv
+    shell: anyenv install --init
     args:
       executable: /bin/bash
     tags: [env, anyenv]
