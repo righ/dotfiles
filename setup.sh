@@ -128,5 +128,5 @@ expect -c "
   interact
 "
 
-source language-server.sh
+source ${DOTFILES}/language-server.sh
 
