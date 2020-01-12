@@ -1,0 +1,3 @@
+highlight StatusLine   term=NONE cterm=NONE ctermfg=black ctermbg=31
+set background=dark
+colorscheme koehler
