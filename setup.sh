@@ -4,8 +4,8 @@ GO_VERSION=1.13.4
 PYTHON_VERSION=3.8.1
 RUBY_VERSION=2.7.0
 NODE_VERSION=13.6.0
-R_VERSION=3.6.2
-HASKELL_VERSION=8.8.1
+# R_VERSION=3.6.2
+# HASKELL_VERSION=8.8.1
 TERRAFORM_VERSION=0.12.19
 
 
@@ -75,30 +75,6 @@ expect -c "
 "
 nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
-
-# Renv
-expect -c "
-  spawn anyenv install Renv
-  expect {
-    default { exit 0 }
-    \"y/N\" { send \"N\n\" }
-  }
-  interact
-"
-Renv install $R_VERSION
-Renv global $R_VERSION
-
-# hsenv
-expect -c "
-  spawn anyenv install hsenv
-  expect {
-    default { exit 0 }
-    \"y/N\" { send \"N\n\" }
-  }
-  interact
-"
-hsenv install $HASKELL_VERSION
-hsenv global $HASKELL_VERSION
 
 # tfenv
 git clone https://github.com/tfutils/tfenv.git ~/.tfenv
