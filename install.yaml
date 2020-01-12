@@ -1,4 +1,5 @@
 - hosts: localhost
+  become: yes
   connection: local
   gather_facts: false
   tasks:
