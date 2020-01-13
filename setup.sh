@@ -15,6 +15,8 @@ source ./install.sh
 
 sudo usermod -aG docker $USER
 
+source .bash_profile
+
 set -x
 git clone https://github.com/anyenv/anyenv ~/.anyenv
 expect -c "
@@ -37,7 +39,7 @@ expect -c "
   }
   interact
 
-  swapn goenv install $GO_VERSION
+  spawn goenv install $GO_VERSION
   expect {
     default { exit 0 }
     \"y/N\" { send \"N\n\" }
