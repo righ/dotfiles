@@ -4,28 +4,28 @@ DOTFILES=$(pwd)
 
 if [ -f "${DOTFILES}/.envrc" ]; then
   . "${DOTFILES}/.envrc"
-  rm ~/.envrc
-  ln -s "${$DOTFILES}/.envrc" ~/.envrc
+  rm ~/.envrc 2> /dev/null
+  ln -s "${DOTFILES}/.envrc" ~/.envrc
 fi
 
 GITHUB_TOKEN=$GITHUB_TOKEN envsubst < .gitconfig > ~/.gitconfig
 
-rm ~/gitignore_global
+rm ~/.gitignore_global 2> /dev/null
 ln -s "${DOTFILES}/.gitignore_global" ~/.gitignore_global
 
-rm ~/.tmux.conf
+rm ~/.tmux.conf 2> /dev/null
 ln -s "${DOTFILES}/.tmux.conf" ~/.tmux.conf
 
-rm ~/.bashrc
+rm ~/.bashrc 2> /dev/null
 ln -s "${DOTFILES}/.bashrc" ~/.bashrc
 
-rm ~/.bash_profile
+rm ~/.bash_profile 2> /dev/null
 ln -s "${DOTFILES}/.bash_profile" ~/.bash_profile
 
-rm ~/.vimrc
+rm ~/.vimrc 2> /dev/null
 ln -s "${DOTFILES}/.vimrc" ~/.vimrc
 
-rm ~/.vim
+rm ~/.vim 2> /dev/null
 ln -s "${DOTFILES}/.vim" ~/.vim
 
 cd ~/
