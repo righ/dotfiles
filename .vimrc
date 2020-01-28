@@ -19,7 +19,6 @@ set smartindent
 set visualbell
 set laststatus=2
 set pumheight=10
-set list
 set noruler
 set clipboard+=unnamed
 set clipboard+=autoselect
