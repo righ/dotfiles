@@ -11,7 +11,20 @@ $ git clone https://github.com/righ/dotfiles ~/dotfiles/
 
 # Execution
 
-## Once
+## Install
+
+```sh
+# ubuntu
+$ sudo ./ubuntu.sh
+
+# mac
+$ ./mac.sh
+
+```
+
+
+## Setup
+
 ```sh
 # run as sudoer
 $ ./setup.sh

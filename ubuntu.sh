@@ -43,4 +43,6 @@ sudo apt-get install -y \
   direnv \
   jq \
 
+sudo snap install bash-language-server
+sudo snap install pyls
 
