@@ -132,3 +132,6 @@ eval "$(anyenv init -)"
 
 source ${DOTFILES}/language-server.sh
 
+# tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || true
+
