@@ -22,6 +22,7 @@ set pumheight=10
 set noruler
 set clipboard+=unnamed
 set clipboard+=autoselect
+set backspace=indent,eol,start
 
 nnoremap Y y$
 nnoremap <silent> <C-B> :bnext<CR>
