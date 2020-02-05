@@ -22,6 +22,9 @@ ln -s "${DOTFILES}/.bashrc" ~/.bashrc
 rm ~/.bash_profile 2> /dev/null
 ln -s "${DOTFILES}/.bash_profile" ~/.bash_profile
 
+rm ~/.zshrc 2> /dev/null
+ln -s "${DOTFILES}/.zshrc" ~/.zshrc
+
 rm ~/.vimrc 2> /dev/null
 ln -s "${DOTFILES}/.vimrc" ~/.vimrc
 
