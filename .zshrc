@@ -21,33 +21,17 @@ function load_if_exists () {
   fi
 }
 
-function rprompt-git-current-branch {
-  local branch_name st branch_status
- 
-  if [ ! -e  ".git" ]; then
-    return
-  fi
-  branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
-  st=`git status 2> /dev/null`
-  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-    branch_status="%F{green}"
-  elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
-    branch_status="%F{red}?"
-  elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
-    branch_status="%F{red}+"
-  elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
-    branch_status="%F{yellow}!"
-  elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
-    echo "%F{red}!(no branch)"
-    return
-  else
-    branch_status="%F{blue}"
-  fi
-  echo "${branch_status}[$branch_name]"
-}
-
 PROMPT="%* %c %(?:%{$fg_bold[green]%}🌝:%{$fg_bold[red]%}🌚) "
-RPROMPT="`rprompt-git-current-branch`"
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats '[%b]'
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () {
+ psvar=()
+ LANG=en_US.UTF-8 vcs_info
+ [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+RPROMPT="%1(v|%F{green}%1v%f|)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(direnv hook bash)"
