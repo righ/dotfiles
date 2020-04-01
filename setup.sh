@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 GO_VERSION=1.13.4
 PYTHON_VERSION=3.8.1
@@ -7,24 +7,6 @@ NODE_VERSION=13.6.0
 # R_VERSION=3.6.2
 # HASKELL_VERSION=8.8.1
 TERRAFORM_VERSION=0.12.19
-
-
-sudo timedatectl set-timezone Asia/Tokyo
-
-sudo usermod -aG docker $USER
-
-source .bash_profile
-
-set -x
-git clone https://github.com/anyenv/anyenv ~/.anyenv
-expect -c "
-  spawn ~/.anyenv/bin/anyenv install --init
-  expect {
-    default { exit 0 }
-    \"y/N\" { send \"y\n\" }
-  }
-  interact
-"
 
 source ./deploy.sh
 

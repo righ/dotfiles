@@ -1,0 +1,3 @@
+
+
+eval "$(anyenv init -)"

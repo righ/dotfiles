@@ -24,6 +24,7 @@ sudo apt-get install -y \
 
 # tools
 sudo apt-get install -y \
+  zsh \
   wget \
   curl \
   unzip \
@@ -43,6 +44,23 @@ sudo apt-get install -y \
   direnv \
   jq \
 
+chsh -s $(which zsh)
+
 sudo snap install bash-language-server
 sudo snap install pyls
+
+sudo timedatectl set-timezone Asia/Tokyo
+
+sudo usermod -aG docker $USER
+
+set -x
+git clone https://github.com/anyenv/anyenv ~/.anyenv
+expect -c "
+  spawn ~/.anyenv/bin/anyenv install --init
+  expect {
+    default { exit 0 }
+    \"y/N\" { send \"y\n\" }
+  }
+  interact
+"
 
