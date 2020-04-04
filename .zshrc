@@ -21,7 +21,7 @@ function load_if_exists () {
   fi
 }
 
-PROMPT="%* %c %(?:%{$fg_bold[green]%}🌝:%{$fg_bold[red]%}🌚) "
+PROMPT="%F{blue}%*%f %F{magenta}%c%f %(?:%{%}🌝:%{%}🌚) "
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '[%b]'
