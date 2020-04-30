@@ -34,6 +34,6 @@ precmd () {
 RPROMPT="%1(v|%F{green}%1v%f|)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(direnv hook bash)"
+eval "$(direnv hook zsh)"
 
 [ -f ~/.secrets ] && source ~/.secrets
