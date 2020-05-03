@@ -1,5 +1,6 @@
 export GOPATH=~/go/
 export PATH="/usr/local/opt/gettext/bin:$HOME/.anyenv/bin:$GOPATH/bin:~/.tfenv/bin:$PATH"
+export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export GOENV_DISABLE_GOPATH=1
 export DOCKER_BUILDKIT=1
