@@ -2,12 +2,12 @@
 source ~/.local/share/zinit/zinit.git/zinit.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-zplugin light "zsh-users/zsh-completions"
-zplugin light "zsh-users/zsh-syntax-highlighting"
-zplugin light "zsh-users/zsh-autosuggestions"
+zinit light "zsh-users/zsh-completions"
+zinit light "zsh-users/zsh-syntax-highlighting"
+zinit light "zsh-users/zsh-autosuggestions"
 
-zplugin ice wait"!0" atload"_zsh_autosuggest_start"
-zplugin ice wait'!0'; zplugin light "greymd/tmux-xpanes"
+zinit ice wait"!0" atload"_zsh_autosuggest_start"
+zinit ice wait'!0'; zinit light "greymd/tmux-xpanes"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
