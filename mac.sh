@@ -3,8 +3,7 @@
 brew install vim
 brew install direnv
 
-mkdir -p ~/.zinit
-git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
+sh -c "$(curl -fsSL https://git.io/zinit-install)"
 
 brew install fzf
 $(brew --prefix)/opt/fzf/install
@@ -15,9 +14,9 @@ brew install gettext
 brew link --force gettext
 
 sudo xcodebuild -license accept
-brew tap bazelbuild/tap
-brew cask install docker
-brew install node wget bazelbuild/tap/bazelisk clang-format kustomize
+brew install docker --cask
+# brew tap bazelbuild/tap
+# brew install node wget bazelbuild/tap/bazelisk clang-format kustomize
 
 brew install anyenv
 anyenv install --init
