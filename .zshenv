@@ -3,6 +3,7 @@ export PATH="/usr/local/opt/gettext/bin:$HOME/.anyenv/bin:$GOPATH/bin:~/.tfenv/b
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 export GOENV_DISABLE_GOPATH=1
 export DOCKER_BUILDKIT=1
 export EDITOR=vim
