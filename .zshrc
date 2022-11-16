@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 #!/bin/zsh
 source ~/.local/share/zinit/zinit.git/zinit.zsh
 autoload -Uz _zinit
@@ -56,3 +58,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

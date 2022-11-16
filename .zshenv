@@ -1,10 +1,12 @@
-export GOPATH=~/go/
+#export GOPATH=~/go/
 export PATH="/usr/local/opt/gettext/bin:$HOME/.anyenv/bin:$GOPATH/bin:~/.tfenv/bin:$PATH"
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
-export GOENV_DISABLE_GOPATH=1
+export PATH="$HOME/flutter/bin:$PATH"
+export LSCOLORS=cxfxcxdxbxegedabagacad
+#export GOENV_DISABLE_GOPATH=1
 export DOCKER_BUILDKIT=1
 export EDITOR=vim
 export LANG=ja_JP.UTF-8
