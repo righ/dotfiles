@@ -18,5 +18,8 @@ brew install docker --cask
 # brew tap bazelbuild/tap
 # brew install node wget bazelbuild/tap/bazelisk clang-format kustomize
 
+# https://github.com/tmux-plugins/tpm/issues/67
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 brew install anyenv
 anyenv install --init
